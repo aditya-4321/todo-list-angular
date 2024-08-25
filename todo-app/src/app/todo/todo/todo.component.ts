@@ -28,4 +28,8 @@ export class TodoComponent implements OnInit {
     return this.todoList;
   }
 
+  editTodo(id: Number) : void {
+
+  }
+
 }
