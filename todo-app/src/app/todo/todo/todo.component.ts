@@ -19,6 +19,7 @@ export class TodoComponent implements OnInit {
   setTodoList() {
     this.todoService.getTodoList().subscribe((response: Todo[]) => {
       if(response){
+        console.log('response',response);
         this.todoList = response;
       }
     })

@@ -1,4 +1,4 @@
-<div class="flex-container">
+<!-- <div class="container1">
     <div style="display: flex;
     background: wheat;
     border: 1px solid #aaa;
@@ -8,5 +8,21 @@
         <div class="mg-pd"> Tasks </div>
         <div class="mg-pd"> Add + </div>
     </div>
-    
+</div>
+<ul>
+    <li *ngFor="let todo of getTodolist()" class="mg-pd" (click)="editTodo(todo.id)">{{todo.name}}</li>
+</ul> -->
+<div class="container">
+    <div class="todo-container">
+        <div class="header">
+            <div class="tasks title-border"> Tasks </div>
+            <div class="checked"><input type="checkbox"></div>
+        </div>
+        <div class="content">
+            <div class="header" *ngFor="let todo of getTodolist()">
+                <div class="tasks" (click)="editTodo(todo.id)">{{todo.name}}</div>
+                <div class="checked"><input type="checkbox"></div>
+            </div>
+        </div>
+    </div>
 </div>
