@@ -10,16 +10,16 @@ export class TodoService {
   seedTodoList: Todo[] = [
     {
       id: 1,
-      name: "Exercise",
+      title: "Exercise",
       description: "Should exercise daily"
     },
     {
       id: 2,
-      name: "Exercise",
+      title: "Exercise",
       description: "Should exercise daily"
     },    {
       id: 3,
-      name: "Exercise",
+      title: "Exercise",
       description: "Should exercise daily"
     },
   ]

@@ -10,19 +10,30 @@
     </div>
 </div>
 <ul>
-    <li *ngFor="let todo of getTodolist()" class="mg-pd" (click)="editTodo(todo.id)">{{todo.name}}</li>
+    <li *ngFor="let todo of getTodolist()" class="mg-pd" (click)="editTodo(todo.id)">{{todo.title}}</li>
 </ul> -->
 <div class="container">
     <div class="todo-container">
         <div class="header">
             <div class="tasks title-border"> Tasks </div>
-            <div class="checked"><input type="checkbox"></div>
+            <div class="checked"><input style="cursor: pointer;" type="checkbox"></div>
         </div>
         <div class="content">
             <div class="header" *ngFor="let todo of getTodolist()">
-                <div class="tasks" (click)="editTodo(todo.id)">{{todo.name}}</div>
-                <div class="checked"><input type="checkbox"></div>
+                <div class="tasks" (click)="editTodo(todo.id)">
+                    <span style="width: 90%;
+                    color: orangered;
+                ">{{todo.title}}</span>
+                    <span><mat-icon aria-hidden="false"  style="cursor: pointer;" aria-label="Example home icon" fontIcon="edit"></mat-icon></span>
+                </div>
+                <div class="checked"><input style="cursor: pointer;" type="checkbox"></div>
             </div>
+            <div class="tasks" style="width: 96%;
+            justify-content: left;
+            padding: 2%;
+            background: lightcoral;">
+                <span style="width: 90%;">Add Todo</span>
+                <span style="float: right;cursor: pointer;"><mat-icon style="cursor: pointer;" aria-hidden="false" aria-label="Example home icon" fontIcon="add"></mat-icon></span></div>
         </div>
     </div>
 </div>

@@ -1,0 +1,12 @@
+@if(selectedTodo.id != -1){
+    <div class="container">
+        <div class="title">
+            <label> Title: </label>
+            <input placeholder="title" [(ngModel)] = "selectedTodo.title">
+        </div>
+        <div class="description">
+            <label> Description: </label>
+            <textarea [(ngModel)] = "selectedTodo.description"></textarea>
+        </div>
+    </div>
+}
