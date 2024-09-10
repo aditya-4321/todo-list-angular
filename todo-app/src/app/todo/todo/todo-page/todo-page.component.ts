@@ -11,7 +11,7 @@ import { Todo } from '../../../models/todo';
 export class TodoPageComponent implements OnInit {
   constructor(
     public dialogRef: MatDialogRef<TodoPageComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: {id: number,todoList: Array<Todo>}
+    @Inject(MAT_DIALOG_DATA) public data: {id: number,todoList: Array<Todo>,action: string}
   ){}
   selectedTodo: Todo = {id:-1,title:'',description:''};
 
@@ -29,6 +29,16 @@ export class TodoPageComponent implements OnInit {
     return reqTodo;
   } 
   
+  onSubmit(){
+    console.log(2)
+    if(this.selectedTodo.id == -1 && this.selectedTodo.title.length>0){
+      this.selectedTodo.id = this.data.todoList.length;
+      this.data.todoList.push(this.selectedTodo);
+      this.dialogRef.close();
+    } else if(this.selectedTodo.id > 0){
+      this.dialogRef.close();
+    }
+  }
 
 }
 

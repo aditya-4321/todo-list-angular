@@ -36,7 +36,20 @@ export class TodoComponent implements OnInit {
       width: '300px',
       height:'340px',
       panelClass: 'custom-style',
-      data:{id:id,todoList:this.todoList},
+      data:{id:id,todoList:this.todoList,action:"Update"},
+    });
+
+    dialogRef?.afterClosed().subscribe(response =>{
+      console.log(response,"response")
+    })
+  }
+
+  addTodo() : void {
+    const dialogRef = this.dialog?.open(TodoPageComponent,{
+      width: '300px',
+      height:'340px',
+      panelClass: 'custom-style',
+      data:{id:-1,todoList:this.todoList,action:"Add"},
     });
 
     dialogRef?.afterClosed().subscribe(response =>{
