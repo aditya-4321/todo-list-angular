@@ -1,12 +1,16 @@
 import { Injectable } from '@angular/core';
-import { of } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { Todo } from './../models/todo';
+import { HttpClient } from '@angular/common/http';
+import { constUrl } from '../shared/constants';
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class TodoService {
+
+  constructor(private http: HttpClient){}
   seedTodoList: Todo[] = [
     {
       id: 1,
@@ -23,9 +27,8 @@ export class TodoService {
       description: "Should exercise daily"
     },
   ]
-  getTodoList() {
-    return of(this.seedTodoList);
+  getTodoList(): Observable<Todo[]> {
+    const url = constUrl.getRootPath();
+    return this.http.get<Todo[]>(url)
   }
-
-  constructor() { }
 }
